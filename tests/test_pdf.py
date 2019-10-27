@@ -1,6 +1,6 @@
 import unittest
 
-import sys
+import sys #riconosce il sistema operatovo con cui lavora
 
 
 
@@ -10,7 +10,7 @@ from scipy.optimize import curve_fit
 
 import matplotlib.pyplot as plt
 
-if sys.flags.interactive:
+if sys.flags.interactive: #il file viene isolato dalla cartella in cui si trova, questo perché il pacchetto lo userò dove voglio
 
     plt.ion()
 
