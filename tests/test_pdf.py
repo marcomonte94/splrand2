@@ -16,7 +16,7 @@ if sys.flags.interactive: #il file viene isolato dalla cartella in cui si trova,
 
 
 
-from splrand.pdf import ProbabilityDensityFunction
+from splrand2.pdf import ProbabilityDensityFunction
 
 
 
