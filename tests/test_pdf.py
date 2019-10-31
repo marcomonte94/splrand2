@@ -87,8 +87,8 @@ class testPdf(unittest.TestCase):
         plt.plot(_x, _y)
 
         mask = ydata > 0
-        #chi2 = sum(((ydata[mask] - f(xdata[mask], *popt)) / np.sqrt(ydata[mask]))**2.)
-        chi2 = 151
+        chi2 = np.sum(((ydata[mask] - f(xdata[mask], *popt)) / np.sqrt(ydata[mask]))**2.)
+        #chi2 = 151
         #nu = mask.sum() - 3
         nu = 170
         sigma = np.sqrt(2 * nu)
