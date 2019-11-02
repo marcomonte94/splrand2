@@ -73,6 +73,7 @@ class testPdf(unittest.TestCase):
 
         plt.figure('Sampling gauss')
         rnd = pdf.rnd(1000000)
+        print('----> ', rnd)
         ydata, edges, _ = plt.hist(rnd, bins=200)
         xdata = 0.5 * (edges[1:] + edges[:-1])
 
@@ -86,11 +87,12 @@ class testPdf(unittest.TestCase):
         _y = f(_x, *popt)
         plt.plot(_x, _y)
 
+        print(ydata)
         mask = ydata > 0
-        #chi2 = sum(((ydata[mask] - f(xdata[mask], *popt)) / np.sqrt(ydata[mask]))**2.)
-        chi2 = 151
-        #nu = mask.sum() - 3
-        nu = 170
+        chi2 = sum(((ydata[mask] - f(xdata[mask], *popt)) / np.sqrt(ydata[mask]))**2.)
+        #chi2 = 151
+        nu = mask.sum() - 3
+        #nu = 170
         sigma = np.sqrt(2 * nu)
         print(chi2, nu, sigma)
         self.assertTrue(abs(chi2 - nu) < 5 * sigma)

@@ -108,4 +108,4 @@ class ProbabilityDensityFunction(InterpolatedUnivariateSpline):
 
         """
 
-        return self.ppf(np.random.uniform(size==size))
+        return self.ppf(np.random.uniform(size=size))
